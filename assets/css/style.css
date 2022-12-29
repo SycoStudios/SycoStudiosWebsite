@@ -2,14 +2,17 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f1f1f1;
+    background-color: white; /* updated color */
 }
 
 /* Style the header of your website */
 header {
-    background-color: #333;
+    position: fixed; /* make the navbar fixed */
+    top: 0; /* position the navbar at the top of the page */
+    width: 100%; /* make the navbar span the entire width of the page */
+    background-color: #2B6ABC; /* updated color */
     color: #fff;
-}
+  }
 
 header .container {
     display: flex;
@@ -57,6 +60,44 @@ main {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 150px);
+    padding-top: 70px;
+}
+
+/* Style the contact form */
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form input, main form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+main form textarea {
+    height: 200px;
+}
+
+main form button {
+    width: 100%;
+    max-width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+main form button:hover {
+    background-color: #444;
 }
 
 main .container {
@@ -75,44 +116,47 @@ main p {
     margin-bottom: 20px;
 }
 
-main form {
+main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the team members section of the about page */
+main .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main .team-member {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 20px 40px;
+    text-align: center;
 }
 
-main form input,
-main form textarea {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+main .team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+main .team-member h3 {
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-main form textarea {
-    height: 150px;
-}
-
-main form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
+main .team-member p {
     font-size: 16px;
-    cursor: pointer;
-}
-
-main form button:hover {
-    background-color: #444;
+    line-height: 24px;
+    max-width: 300px;
 }
 
 /* Style the footer of your website */
 footer {
-    background-color: #333;
+    background-color: #2B6ABC;
     color: #fff;
 }
 
@@ -152,4 +196,137 @@ footer .social li a:hover {
 
 footer p {
     font-size: 14px;
+}
+
+
+/* Add responsive styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    footer .container {
+        flex-direction: column; /* stack elements vertically */
+        align-items: flex-start; /* align elements to the left */
+    }
+
+    footer .social {
+        margin-bottom: 10px; /* add some space between the social links and the copyright */
+    }
+}
+
+/* Add responsive styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    main .container {
+        max-width: 90%;
+    }
+
+    main .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .team-member {
+        margin: 20px 0;
+    }
+}
+
+/* Style the game carousel */
+.game-carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+.game-carousel-item {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.game-carousel-item img {
+    width: 100%;
+}
+
+.game-carousel-item h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.game-carousel-item p {
+    font-size: 14px;
+}
+
+.game-carousel-item .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2B6ABC;
+}
+
+.game-carousel-item .btn:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.game-carousel::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.game-carousel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.game-carousel::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Style the news cards */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.news-card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.news-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2B6ABC;
+    color: #fff;
+}
+
+.news-card .btn:hover {
+    background-color: #ccc;
+    cursor: pointer;
 }
